@@ -5,17 +5,13 @@
     ```bash
     $ xhost +local:root
     ```
-2. Set bdd tag as
+
+2. Build docker image
     ```bash
-    $ LABEL=`date +%Y%m%d%H%m%S`
+    $ docker build -t docker_tag .
     ```
 
-3. Build docker image
+3. Run docker image (fill your image id from build)
     ```bash
-    $ docker build -t $LABEL .
-    ```
-
-4. Run docker image (fill your image id from build)
-    ```bash
-    $ docker run -it -v $PWD:/usr/src -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -t $LABEL bash
+    $ docker run -it -v $PWD:/usr/src -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY=$DISPLAY -t docker_tag bash
     ```

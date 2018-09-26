@@ -7,7 +7,7 @@ class PythonOrgSearch(unittest.TestCase):
     def setUp(self):
         chrome_options = webdriver.ChromeOptions()
         chrome_options.add_argument('--no-sandbox')
-        self.browser = webdriver.Chrome(chrome_options=chrome_options)
+        self.browser = webdriver.Chrome(options=chrome_options)
 
     def tearDown(self):
         self.browser.quit()
