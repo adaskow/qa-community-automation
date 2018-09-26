@@ -1,0 +1,1 @@
+# qa-community-automation
